@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Último Romântico do Terrão | Fotoblog</title>
+    <style>
+        /* --- RESET & PALETA DE CORES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-color: #0b0c10;
+            --card-bg: #1f2833;
+            --text-main: #c5a880; /* Tom de terra/areia */
+            --text-muted: #95a5a6;
+            --accent: #2ecc71; /* Verde gramado/varzeano */
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--white);
+            line-height: 1.5;
+            padding-bottom: 60px;
+        }
+
+        /* --- HEADER --- */
+        header {
+            text-align: center;
+            padding: 50px 20px 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header h1 {
+            font-size: 2.3rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: var(--text-main);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- GRID DE POSTS (AGRUPADOS) --- */
+        .feed-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Cria as duas colunas lado a lado */
+            gap: 25px; /* Espaço entre os blocos */
+        }
+
+        .post {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Espaço reservado para a Imagem */
+        .post-image-placeholder {
+            width: 100%;
+            height: 250px; /* Altura menor para se ajustar ao formato agrupado */
+            background-color: #2c3e50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 15px;
+            color: var(--text-muted);
+            font-weight: bold;
+            font-style: italic;
+            border-bottom: 3px solid var(--text-main);
+        }
+
+        .post-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .post-title {
+            font-size: 1.25rem;
+            color: white;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .post-caption {
+            font-size: 0.95rem;
+            color: white;
+            margin-bottom: 15px;
+            flex-grow: 1; /* Garante que os textos alinhem o bloco mesmo com tamanhos diferentes */
+        }
+
+        .post-tags {
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding-top: 20px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid #1f2833;
+            max-width: 1000px;
+            margin: 50px auto 0;
+        }
+
+        /* --- RESPONSIVIDADE PARA CELULARES --- */
+        @media (max-width: 768px) {
+            .feed-grid {
+                grid-template-columns: 1fr; /* Vira uma coluna única em telas pequenas */
+                gap: 20px;
+            }
+            header h1 { font-size: 1.8rem; }
+            .post-image-placeholder { height: 220px; }
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>O Último Romântico do Terrão</h1>
+        <p>A poeira, o asfalto, o chinelo e a paixão pura. Onde o futebol ainda respira sem filtros.</p>
+    </header>
+
+    <!-- CONTAINER AGRUPADO EM GRID -->
+    <main class="feed-grid">
+
+        <!-- POST 1 -->
+        <article class="post">
+            <div class="post-image-placeholder">
+                <img src="img/trava.jpeg" alt="">
+            </div>
+            <div class="post-content">
+                <h2 class="post-title">🩴 A Trava Sagrada</h2>
+                <p class="post-caption">Quem nunca esticou o dedão no asfalto não sabe o que é a física quântica da rua. Se a bola passar por cima do chinelo, a discussão dura mais que os 90 minutos.</p>
+                <p>Na versão futebol no campo não temos esse problema.</p>
+                <div class="post-tags">#FutebolRaiz #Pelada</div>
+            </div>
+        </article>
+
+        <!-- POST 2 -->
+        <article class="post">
+            <div class="post-image-placeholder">
+                <img src="img/carro.jfif" alt="">
+            </div>
+            <div class="post-content">
+                <h2 class="post-title">🚗 "Parou! Lá Vem Carro!"</h2>
+                <p class="post-caption">O único elemento capaz de parar o jogo. Todo mundo congela, a bola vai pro braço e, assim que o para-choque passa, a pelada retoma de onde parou.</p>
+                <div class="post-tags">#FutebolUrbano #Infancia #Quebrada</div>
+            </div>
+        </article>
+
+        <!-- POST 3 -->
+        <article class="post">
+            <div class="post-image-placeholder">
+                <img src="img/terra.jpeg" alt="">
+            </div>
+            <div class="post-content">
+                <h2 class="post-title">🟤 A Mística do Terrão</h2>
+                <p class="post-caption">Domingo, 8h da manhã. O cheiro de terra molhada se mistura com o do churrasco. Na várzea, o uniforme brilha contra o vermelho do chão batido.</p>
+                <div class="post-tags">#FutebolDeVarzea #TerraoResiste #Amador</div>
+            </div>
+        </article>
+
+        
+       <!-- POST 4 -->
+        <article class="post">
+            <div class="post-image-placeholder">
+                <img src="img/jogado.webp" alt="">
+            </div>
+            <div class="post-content">
+                <h2 class="post-title">🩹 Ossos do Ofício</h2>
+                <p class="post-caption">O dedão ralado no asfalto ou o roxo na canela são as medalhas da várzea. Não tem maca, massagista ou spray milagroso: o tratamento é gelo no saquinho de sacolé e um banco de reservas improvisado para continuar assistindo e cornetando o jogo.</p>
+                <div class="post-tags">#Guerreiro #JoelhoRalado #Resenha #SangueEBoneca</div>
+            </div>
+        </article>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 O Último Romântico do Terrão. Feito para quem joga por amor.</p>
+    </footer>
+
+</body>
+</html>
