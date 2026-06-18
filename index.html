@@ -204,9 +204,347 @@
 
     </main>
 
-    <footer>
-        <p>&copy; 2026 O Último Romântico do Terrão. Feito para quem joga por amor.</p>
-    </footer>
+<style>
+       
+        .survey-box {
+            background-color: #1f2833;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            border-top: 4px solid #c5a880;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: #ffffff;
+            max-width: 1000px;
+            margin: 30px auto;
+        }
+
+        .survey-box h2 {
+            font-size: 1.8rem;
+            color: #c5a880;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
+        .survey-box > p {
+            color: #95a5a6;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .survey-group {
+            margin-bottom: 20px;
+        }
+
+        .survey-question {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .survey-question span {
+            font-size: 0.85rem;
+            color: #95a5a6;
+            font-weight: normal;
+            margin-left: 5px;
+        }
+
+        .survey-options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .option-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .option-label input[type="radio"] {
+            accent-color: #2ecc71;
+            width: 18px;
+            height: 18px;
+        }
+
+        .survey-input {
+            width: 100%;
+            background-color: #0f141c;
+            border: 1px solid #2c3e50;
+            border-radius: 6px;
+            padding: 12px;
+            color: #ffffff;
+            font-family: inherit;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .survey-input:focus {
+            border-color: #c5a880;
+        }
+
+        textarea.survey-input {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .btn-submit {
+            background-color: #2ecc71;
+            color: #0b0c10;
+            border: none;
+            border-radius: 6px;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: opacity 0.2s;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .survey-box { padding: 20px; }
+            .survey-box h2 { font-size: 1.5rem; }
+        }
+        .flag {
+            border: 2px solid #2ecc71;
+            border-radius: 6px;
+            padding: 4px 8px;
+            background-color: rgba(46, 204, 113, 0.1);
+        }
+    </style>
+
+    <div class="survey-box">
+        <h2>Pesquisa de Memória e Cultura Comunitária</h2>
+        <p>Ajude-nos a mapear as histórias, tradições e a união do nosso território respondendo ao questionário abaixo.</p>
+        
+        <form>
+            <!-- PERGUNTA 1 -->
+            <div class="survey-group">
+                <label class="survey-question">1. Há quanto tempo você mora no bairro? <span>(Múltipla escolha)</span></label>
+                <div class="survey-options">
+                    <label class="option-label"><input type="radio" name="tempo_bairro" value="menos_5"> Menos de 5 anos</label>
+                    <label class="option-label flag"><input type="radio" name="tempo_bairro" value="5_20"> De 5 a 20 anos</label>
+                    <label class="option-label flag"><input type="radio" name="tempo_bairro" value="mais_20"> Mais de 20 anos / Desde que nasci</label>
+                </div>
+            </div>
+
+            <div class="survey-group">
+                <label class="survey-question">2. Qual é a sua idade? <span>(Múltipla escolha)</span></label>
+                <div class="survey-options">
+                    <label class="option-label flag"><input type="radio" name="idade" value="ate_29"> Até 29 anos</label>
+                    <label class="option-label flag"><input type="radio" name="idade" value="30_59"> De 30 a 59 anos</label>
+                    <label class="option-label flag"><input type="radio" name="idade" value="60_mais"> 60 anos ou mais</label>
+                </div>
+            </div>
+
+           
+            <div class="survey-group">
+                <label class="survey-question">3. Qual lugar do bairro você considera o mais importante para a história ou cultura da nossa comunidade? <span>(Aberta)</span></label>
+                <textarea class="survey-input" placeholder="">O campo de futebol.</textarea>
+            </div>
+
+         
+            <div class="survey-group">
+                <label class="survey-question">4. Como você avalia a união e a solidariedade entre os moradores hoje em dia (ex: mutirões, festas, ajuda mútua)? <span>(Escala de Likert)</span></label>
+                <div class="survey-options">
+                    <label class="option-label flag"><input type="radio" name="solidariedade" value="muito_alta"> Muito alta</label>
+                    <label class="option-label"><input type="radio" name="solidariedade" value="alta"> Alta</label>
+                    <label class="option-label"><input type="radio" name="solidariedade" value="neutra"> Neutra</label>
+                    <label class="option-label"><input type="radio" name="solidariedade" value="baixa"> Baixa</label>
+                    <label class="option-label"><input type="radio" name="solidariedade" value="muito_baixa"> Muito baixa</label>
+                </div>
+            </div>
+
+            
+            <div class="survey-group">
+                <label class="survey-question">5. Você conhece ou se lembra de alguma antiga tradição, festa, horta comunitária ou costume do bairro que está se perdendo? Se sim, comente brevemente. <span>(Aberta - Especial para Idosos)</span></label>
+                <textarea class="survey-input" placeholder="Resposta longa">"Sim, me lembro muito bem das festas de São João que organizávamos na antiga praça de terra batida, onde hoje fica o novo asfalto. Toda a rua se reunia em mutirão para montar as fogueiras e as barracas de comida. Era uma união linda que vinha das famílias mais antigas e que acabou se perdendo um pouco com o tempo e a chegada de novos moradores."</textarea>
+            </div>
+
+           
+            <div class="survey-group">
+                <label class="survey-question">6. Como você acha que a tecnologia ou a arte (como grafite e redes sociais) ajudam a divulgar o nosso bairro hoje? <span>(Aberta - Especial para Jovens)</span></label>
+                <textarea class="survey-input" placeholder="Resposta longa">"Acho que a arte e a tecnologia mudaram tudo por aqui. Hoje, a gente usa o Instagram e o TikTok para gravar os jogos do Terrão e mostrar a nossa cultura para fora. Além disso, os grafites nos muros transformaram o visual do bairro, contando a nossa história de um jeito moderno que atrai a atenção de quem é de fora e dá orgulho para quem mora aqui."</textarea>
+            </div>
+
+           
+           
+        </form>
+    </div>
+</div>
+<footer class="site-footer">
+    <style>
+        /* --- ESTILIZAÇÃO DO FOOTER --- */
+        .site-footer {
+            background-color: #1f2833;
+            color: #ffffff;
+            padding: 40px 20px 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            border-top: 4px solid #c5a880;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .footer-brand {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.4rem;
+            color: #c5a880;
+            text-transform: uppercase;
+            font-weight: 800;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .footer-brand p {
+            color: #95a5a6;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            max-width: 300px;
+        }
+
+        .footer-links, .footer-social {
+            flex: 1;
+            min-width: 180px;
+        }
+
+        .footer-links h4, .footer-social h4 {
+            font-size: 1.1rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            color: #95a5a6;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links ul li a:hover {
+            color: #c5a880;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: #0b0c10;
+            background-color: #95a5a6;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .social-icons a:hover {
+            background-color: #2ecc71;
+            color: #0b0c10;
+        }
+
+        .footer-bottom {
+            max-width: 1000px;
+            margin: 30px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid #2c3e50;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #95a5a6;
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-brand p {
+                margin: 0 auto;
+            }
+            .social-icons {
+                justify-content: center;
+            }
+        }
+    </style>
+
+    <div class="footer-container">
+        <!-- Coluna 1: Nome do Projeto -->
+        <div class="footer-brand">
+            <h3>O Último Romântico do Terrão</h3>
+            <p>Preservando a memória viva, a cultura e a paixão pura do futebol de várzea da nossa comunidade.</p>
+        </div>
+
+        <!-- Coluna 2: Navegação Rápida -->
+        <div class="footer-links">
+            <h4>Navegação</h4>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Galeria de Fotos</a></li>
+                <li><a href="#">Histórias Locais</a></li>
+                <li><a href="#">Pesquisa Comunitária</a></li>
+            </ul>
+        </div>
+
+        <!-- Coluna 3: Redes Sociais -->
+        <div class="footer-social">
+            <h4>Divulgue</h4>
+            <div class="social-icons">
+                <a href="#" title="WhatsApp">WA</a>
+                <a href="#" title="Instagram">IG</a>
+                <a href="#" title="Facebook">FB</a>
+                <a href="#" title="YouTube">YT</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Direitos Autorais -->
+    <div class="footer-bottom">
+        <p>&copy; 2026 O Último Romântico do Terrão. Feito com amor para a preservação da nossa história.</p>
+    </div>
+</footer>
+</body>
+</html>
+        
 
 </body>
 </html>
